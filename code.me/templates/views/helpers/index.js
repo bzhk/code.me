@@ -289,25 +289,14 @@ module.exports = function () {
 	//   {{/if}}`
 
 	_helpers.flashMessages = function (messages) {
-		var output = '';
+		var output = '<div class="row"><ul class="col-sm-offset-4 col-xs-offset-1 col-sm-5">';
 		for (var i = 0; i < messages.length; i++) {
 
-			if (messages[i].title) {
-				output += '<h4>' + messages[i].title + '</h4>';
-			}
 
-			if (messages[i].detail) {
-				output += '<p>' + messages[i].detail + '</p>';
-			}
+				output += '<li>' + messages[i] + '</li>';
 
-			if (messages[i].list) {
-				output += '<ul>';
-				for (var ctr = 0; ctr < messages[i].list.length; ctr++) {
-					output += '<li>' + messages[i].list[ctr] + '</li>';
-				}
-				output += '</ul>';
-			}
 		}
+		output +='</ul></div>';
 		return new hbs.SafeString(output);
 	};
 
