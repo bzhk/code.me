@@ -6,47 +6,56 @@
     <form action="/rejestracja" method="POST">
       <div class="form-group row">
           <div class="col-md-offset-3 col-md-6">
+              <label class="sr-only">Wprowadź nazwę uzytkownika - nick</label>
               <input class="form-control" type="text" placeholder="Nazwa użytkownika" name="nick">
           </div>
         </div>
         <div class="form-group row">
             <div class="col-md-offset-3 col-md-6">
+                <label class="sr-only">Wprowadź adres e-mail</label>
                 <input class="form-control" type="email" value="{{form.email}}" placeholder="Adres e-mail" name="email">
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-offset-3 col-md-6">
+              <label class="sr-only">Powtórz e-mail</label>
                 <input class="form-control" type="email" placeholder="Powtórz e-mail" name="emailRep">
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-offset-3 col-md-3">
+              <label class="sr-only">Wprowadź imię</label>
                 <input class="form-control" type="text" value="{{form.firstname}}" placeholder="Imię" name="firstname">
             </div>
 
             <div class="col-md-3">
+              <label class="sr-only">Wprowadź nazwisko</label>
                 <input class="form-control" type="text" value="{{form.lastname}}" placeholder="Nazwisko" name="lastname">
             </div>
         </div>
         <div class="form-group row">
 
             <div class="col-md-offset-3 col-md-6">
+              <label class="sr-only">Wprowadź Hasło</label>
                 <input class="form-control" type="password" placeholder="Hasło" name="password">
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-offset-3 col-md-6">
+              <label class="sr-only">Powtórz hasło</label>
                 <input class="form-control" type="password" placeholder="Powtórz hasło" name="passwordRep">
             </div>
         </div>
         <div class="form-group row">
             <div class="checkbox col-md-offset-3 col-md-6 text-center">
+              <label class="sr-only">Pole do akceptacji regulaminu serwisu Code.me</label>
                <label><input type="checkbox" name="agr"> Akceptuje regulamin serwisu Code.me.</label>
              </div>
         </div>
 
         <div class="form-group row text-center">
             <div class="col-md-offset-3 col-md-6">
+              <label class="sr-only">Przycisk ZArejestruj się</label>
                 <button class="btn btn-info" type="submit">Zarejestruj się</button>
             </div>
         </div>
