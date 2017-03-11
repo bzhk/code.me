@@ -7,13 +7,13 @@ exports = module.exports = function(req,res){
     return res.redirect("/");
   }
   var view = new keystone.View(req, res);
-  var locals = res.locals;
 
+  var locals = res.locals;
   locals.section = "rejestracja";
-  locals.form =req.body;
+  locals.form = req.body;
 
   view.on("post", function(next){
-      var data = req.body;
+      var data = locals.form;
       var errors = [];
     async.series([
       function(done){
