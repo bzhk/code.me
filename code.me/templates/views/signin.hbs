@@ -1,0 +1,23 @@
+<div class="container" >
+    <h1 class="text-center">Zaloguj się</h1>
+    <form action="/zaloguj" method="POST">
+      <div class="form-group row">
+          <div class="col-md-offset-4 col-md-4">
+              <label for="nickInput" class="sr-only">Wprowadź email w celu logowania</label>
+              <input id="nickInput" class="form-control" type="text" value="{{form.email}}" placeholder="Adres e-mail" name="email">
+          </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-offset-4 col-md-4">
+               <label for="passwordInput" class="sr-only">Wprowadź Hasło w celu logowania</label>
+                <input id="passwordInput" class="form-control" type="password" placeholder="Hasło" name="password">
+            </div>
+          </div>
+          <div class="form-group row text-center">
+              <div class="col-md-offset-4 col-md-4">
+                <label for="siginBtn" class="sr-only">Przycisk Zaloguj się</label>
+                  <button id="siginBtn" class="btn btn-info" type="submit">Zaloguj się</button>
+              </div>
+          </div>
+        </form>
+      </div>
