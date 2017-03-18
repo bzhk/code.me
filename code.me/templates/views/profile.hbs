@@ -1,0 +1,51 @@
+<div class="container" >
+  <h3 class="text-center">Twoje dane</h3>
+  <br>
+
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+          <label for="accFirstName">Imię: </label>
+            <span id="accFirstName"> {{user.name.first}}</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+          <label for="accLastName">Nazwisko: </label>
+            <span id="accLastName">{{user.name.last}}</span>
+        </div>
+    </div>
+      <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+          <label for="accNick">Pseudonim: </label>
+            <span id="accNick" name="nick">{{user.nick}}</span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+            <label for="emailSpan">Adres e-mail:</label>
+            <span id="emailSpan" name="email">{{user.email}}</span>
+        </div>
+    </div>
+    <h3  class="text-center">Zmiana hasła</h3>
+    <br>
+  <form action="/profil" method="POST">
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+          <label class="sr-only" for="passwordInput">Wprowadź nowe hasło</label>
+            <input id="passwordInput" class="form-control" type="password" placeholder="Nowe hasło" name="password">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+          <label class="sr-only" for="passwordInputRep">Powtórz nowe hasło</label>
+            <input id="passwordInputRep" class="form-control" type="password" placeholder="Powtórz nowe hasło" name="passwordRep">
+        </div>
+    </div>
+    <div class="form-group row text-center">
+        <div class="col-md-offset-3 col-md-6">
+          <label for="upData" class="sr-only">Uaktualnij dane</label>
+            <button id="upData" class="btn btn-info" type="submit">Uaktualnij dane</button>
+        </div>
+    </div>
+  </form>
+</div>

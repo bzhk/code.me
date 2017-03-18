@@ -42,8 +42,13 @@
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								{{#if user}}
-								<li><a href="/wyloguj">Wyloguj się</a></li>
-								<li><a>Witaj {{user.nick}}</a></li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown">Witaj {{user.nick}}</a>
+									<ul class="dropdown-menu">
+										<li><a href="/profil">Twój profil</a></li>
+										<li><a href="/wyloguj">Wyloguj się</a></li>
+									</ul>
+								</li>
 								{{else}}
 								<li><a href="/rejestracja">Zarejestruj się</a></li>
 								<li><a href="/zaloguj">Zaloguj się</a></li>
