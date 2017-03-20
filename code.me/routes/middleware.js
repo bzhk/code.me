@@ -19,7 +19,8 @@ var _ = require('lodash');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
+		{ label: 'Strona główna', key: 'home', href: '/' },
+		{ label: 'Ogłoszenia', key: 'posts', href: '/ogloszenia' },
 	];
 	res.locals.user = req.user;
 	next();

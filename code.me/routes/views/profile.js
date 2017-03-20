@@ -1,6 +1,4 @@
 var keystone = require('keystone');
-var async = require('async');
-var Types = keystone.Field.Types;
 
 exports = module.exports = function (req, res) {
 
@@ -18,7 +16,6 @@ exports = module.exports = function (req, res) {
 			var errors = [];
 			async.series([
 				function(done){
-					// Sprawdzenie forma
 					if(!data.password){
 						errors.push("Wprowadź nowe hasło")
 					}
@@ -39,7 +36,6 @@ exports = module.exports = function (req, res) {
 								email: req.user.email
 							},function(err,user){
 								if(err){
-									console.log("działa");
 									return done(err);
 								}
 								req.user.password = data.password;

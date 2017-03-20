@@ -39,6 +39,8 @@ exports = module.exports = function (app) {
 	app.all('/zaloguj', routes.views.signin);
 	app.get('/wyloguj', routes.views.signout);
 	app.all('/profil', routes.views.profile);
+	app.get('/ogloszenia', routes.views.posts);
+	app.get('/ogloszenia/:slug', routes.views.post);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

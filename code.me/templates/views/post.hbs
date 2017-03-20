@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-9">
+      <article>
+        <p><a href="/ogloszenia">&larr; Wróć do listy ogłoszeń</a></p>
+        <hr>
+        <header>
+          <h1>{{post.title}}</h1>
+          <h5>
+            {{#if post.author.name.first}}przez {{post.author.name.first}}{{/if}}
+          </h5>
+        </header>
+        <div class="post">
+          <p>Stawka: {{{post.minSalary}}} - {{{post.maxSalary}}} zł {{{post.salaryType}}}</p>
+          <p>Praca zdalna: {{{post.remote}}}</p>
+          <strong>Opis:</strong><br>
+          {{{post.content.extended}}}
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

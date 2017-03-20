@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Ogłoszenia</h1>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-md-9">
+			<h4 class="text-weight-normal">Dostępna ilość ogłoszeń: {{ data.posts.results.length}}</h4>
+			<div class="blog">
+				{{# each data.posts.results}}
+				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
+					<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
+					<p class="lead text-muted">
+							{{#if author.name.first}}by {{author.name.first}} {{author.name.last}}{{/if}}
+					</p>
+          <p>Stawka: {{{minSalary}}} - {{{maxSalary}}} zł {{{salaryType}}}</p>
+          <p>Praca zdalna: {{{remote}}}</p>
+					<p>{{{content.brief}}}</p>
+					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>
