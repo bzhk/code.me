@@ -24,6 +24,7 @@ Post.add({
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
+	applyGr: {type: String},
 });
 
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';

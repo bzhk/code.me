@@ -28,6 +28,29 @@ module.exports = function () {
 		}
 	};
 
+
+	hbs.registerHelper('diff', function(a,b, options) {
+		try {
+			if(a!=b) {
+				return options.fn(this);
+			}
+		} catch (e) {
+			console.log("wystąpił błąd"+e)
+		}
+
+	});
+
+	hbs.registerHelper('same', function(a,b, options) {
+		try {
+			if(a===b) {
+				return options.fn(this);
+			}
+		} catch (e) {
+			console.log("wystąpił błąd"+e)
+		}
+
+	});
+
 	/**
 	 * Port of Ghost helpers to support cross-theming
 	 * ==============================================

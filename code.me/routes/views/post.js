@@ -1,15 +1,19 @@
 var keystone = require('keystone');
 
+
 exports = module.exports = function (req, res) {
 
 
     var view = new keystone.View(req, res);
     var locals = res.locals;
 
+
     locals.section = 'post';
 
 
-    view.on('init', function(done){
+
+
+    view.on('init', function(next){
 
       keystone.list('Post').model
         .findOne({
@@ -18,11 +22,17 @@ exports = module.exports = function (req, res) {
         })
         .populate('author')
         .exec(function(err, results){
+
           locals.post = results;
-          done(err);
+          next(err);
       });
     });
 
+
+
 	// Render the view
 	view.render('post');
+
+
+
 };
