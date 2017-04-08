@@ -17,13 +17,62 @@ exports = module.exports = function (req, res) {
       var errors = [];
 			async.series([
 				function(done){
-					//Sprawdzenie pól forma
-					done()
+
+					if(!data.title){
+						errors.push("Brak tytułu ogłoszenia.")
+					}
+
+					if(isNaN(data.minSalary)){
+						errors.push("Stawka minimalna musi być liczbą.")
+					}else if(!data.minSalary){
+						errors.push("Brak stawki minimalnej.")
+					}
+
+					if(isNaN(data.maxSalary)){
+						errors.push("Stawka maksymalna musi być liczbą.")
+					}else if(!data.maxSalary){
+						errors.push("Brak stawki maksymalnej.")
+					}
+
+					if(!data.contentBrief){
+						errors.push("Brak krótkiej treści ogłoszenia")
+					}
+
+					if(!data.contentExtended){
+						errors.push("Brak długiej treści ogłoszenia")
+					}
+
+					errors.forEach(function(err){
+						req.flash("error",err);
+					})
+					if(errors.length){
+						return done(true);
+					}
+
+					done();
 				},
 				function(done){
-					//Dodanie forma jako model Post do bazy
-					done()
-				},
+					var postData={
+						title: data.title,
+						minSalary: data.minSalary,
+						maxSalary: data.maxSalary,
+						remote: data.remote,
+						salaryType: data.salaryType,
+						author: req.user,
+						content: {
+							brief: data.contentBrief,
+							extended: data.contentExtended
+						}
+						};
+						var Post = keystone.list("Post").model,
+								post = new Post(postData);
+
+							post.save(function(err){
+								console.log(err);
+								done(err);
+							});
+
+				}
 
 			],function(err){
 	      if(err){

@@ -15,7 +15,7 @@ Post.add({
 	title: { type: String, required: true },
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
-	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+	publishedDate: { type: Types.Datetime, index: true, dependsOn: { state: 'published' } },
   salaryType: {type: Types.Select, require: true, initial: true, options: 'na godzinę, na tydzień, na miesiąc'},
 	minSalary: { type: Number, required: true, initial: true },
 	maxSalary: { type: Number, required: true, initial: true },

@@ -21,31 +21,33 @@
       <div class="form-group row">
         <div class="col-md-offset-3 col-md-3">
           <label for="salaryTypeInput">Okres płatności</label>
-            <select id="salaryTypeInput" class="form-control" value="{{form.salaryType}}" name="salaryType">
-              <option value="perH">na godzinę</option>
-              <option value="perW">na tydzień</option>
-              <option value="perM">na miesiąc</option>
+            <select id="salaryTypeInput" class="form-control" name="salaryType">
+              <option value="na godzinę">na godzinę</option>
+              <option value="na tydzień">na tydzień</option>
+              <option value="na miesiąc">na miesiąc</option>
             </select>
           </div>
             <div class="col-md-3">
               <label for="remoteInput">Praca zdalna</label>
-                <select id="remoteInput" class="form-control" type="text" value="{{form.remote}}" placeholder="Praca zdalna" name="remote">
-                    <option value="yes">tak</option>
-                    <option value="no">nie</option>
+                <select id="remoteInput" class="form-control" type="text" name="remote">
+                    <option value="tak">tak</option>
+                    <option value="nie">nie</option>
                 </select>
             </div>
       </div>
       <div class="form-group row">
           <div class="col-md-offset-3 col-md-6">
               <label for="briefInput">Krótka treść ogłoszenia</label>
-              <textarea id="briefInput" class="form-control" type="text" placeholder="Treść ogłoszenia" name="content.brief">
+              <textarea id="briefInput" class="form-control" type="text" name="contentBrief">
+                {{form.contentBrief}}
                 </textarea>
           </div>
         </div>
       <div class="form-group row">
           <div class="col-md-offset-3 col-md-6">
               <label for="extendedInput">Długa treść ogłoszenia</label>
-              <textarea id="extendedInput" class="form-control" type="text" placeholder="Treść ogłoszenia" name="content.extended">
+              <textarea id="extendedInput" class="form-control" type="text" name="contentExtended">
+                {{form.contentExtended}}
                 </textarea>
           </div>
         </div>
