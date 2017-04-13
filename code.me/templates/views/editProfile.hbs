@@ -1,0 +1,68 @@
+<div class="container" >
+  <h3 class="text-center">Twoje dane</h3>
+  <br>
+  <form action="/edytuj_profil" method="POST">
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+            <label for="accTS">Używane technologie(wymieniać po przecinku):</label>
+            <input id="accTS" name="accTS" class="form-control" value="{{user.techstack}}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+            <label for="accPLev">Doświadczenie jako programista:</label>
+            <input id="accPLev" name="accPLev" class="form-control" value="{{user.prog_lev}}" list="prog_lev"/>
+            <datalist id="prog_lev">
+              <option value="Programowanie to hobby">
+              <option value="Uczę się na programistę">
+              <option value="Junior Developer">
+              <option value="Mid-Level Developer">
+              <option value="Senior Developer">
+            </datalist>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+            <label for="accWS">Strona internetowa:</label>
+            <input id="accWS" name="accWS" class="form-control" value="{{user.webstie}}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+            <label for="accFBPI">Adres facebook:</label>
+            <input id="accFBPI" name="accFBPI" type="text" class="form-control" value="{{user.fb_profile}}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-offset-3 col-md-6">
+        <label for="accAbout">O mnie: </label>
+          <textarea id="accAbout" name="about">{{user.about}}</textarea>
+      </div>
+  </div>
+    <h3  class="text-center">Zmiana hasła</h3>
+    <br>
+
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+          <label class="sr-only" for="passwordInput">Wprowadź nowe hasło</label>
+            <input id="passwordInput" class="form-control" type="password" placeholder="Nowe hasło" name="password">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-6">
+          <label class="sr-only" for="passwordInputRep">Powtórz nowe hasło</label>
+            <input id="passwordInputRep" class="form-control" type="password" placeholder="Powtórz nowe hasło" name="passwordRep">
+        </div>
+    </div>
+    <div class="form-group row text-center">
+        <div class="col-md-offset-3 col-md-6">
+          <label for="upData" class="sr-only">Uaktualnij dane</label>
+            <button id="upData" class="btn btn-info" type="submit">Uaktualnij dane</button>
+        </div>
+    </div>
+  </form>
+</div>
+<script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
+<script type="text/javascript">
+   CKEDITOR.replace( 'about' )
+</script>

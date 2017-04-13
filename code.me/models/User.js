@@ -15,6 +15,12 @@ User.add({
 	nick: { type: String, initial: true, required: true,index: true,unique: true },
 	name: { type: Types.Name, required: true,initial: true, index: true },
 	email: { type: Types.Email, initial: true, required: true, index: true },
+	website: { type: Types.Url},
+	fb_profile: {type: Types.Url},
+	about: {type: Types.Html, wysiwyg: true, height: 400},
+	exp:{type: Types.Number, default:'0'},
+	techstack:{type: String},
+	prog_lev:{type: Types.Select, options:'Programowanie to hobby, Uczę się na programistę, Junior Developer, Mid-Level Developer, Senior Developer'},
 	password: { type: Types.Password, initial: true, required: true },
 	agr: { type: Boolean, label:'Akceptacja Regulaminu',initial: true, required: true },
 }, 'Prawa', {

@@ -1,51 +1,72 @@
 <div class="container" >
-  <h3 class="text-center">Twoje dane</h3>
-  <br>
+<br>
+<h2 class="text-center">Twój profil</h2>
+<br>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accFirstName">Imię: </label>
+        <span id="accFirstName"> {{user.name.first}}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accLastName">Nazwisko: </label>
+        <span id="accLastName">{{user.name.last}}</span>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accNick">Pseudonim: </label>
+        <span id="accNick" name="nick">{{user.nick}}</span>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+        <label for="emailSpan">Adres e-mail:</label>
+        <span id="emailSpan" name="email">{{user.email}}</span>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accTS">Używane technologie: </label>
+      <br>
+        <span id="accTS" name="accTS">{{user.techstack}}</span>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accPLev">Doświadczenie jako programist: </label>
+        <span id="accPLev" name="accPLev">{{user.prog_lev}}</span>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accExp">Doświadczenie w portalu Code.me: </label>
+        <span id="accExp" name="exp">{{user.exp}}</span>
+    </div>
+</div>
 
-    <div class="form-group row">
-        <div class="col-md-offset-3 col-md-6">
-          <label for="accFirstName">Imię: </label>
-            <span id="accFirstName"> {{user.name.first}}</span>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-offset-3 col-md-6">
-          <label for="accLastName">Nazwisko: </label>
-            <span id="accLastName">{{user.name.last}}</span>
-        </div>
+<div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+        <label for="accWS">Strona internetowa:</label>
+        <p id="accWS"><a href="{{user.website}}">{{user.website}}</a></p>
     </div>
-      <div class="form-group row">
-        <div class="col-md-offset-3 col-md-6">
-          <label for="accNick">Pseudonim: </label>
-            <span id="accNick" name="nick">{{user.nick}}</span>
-        </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+        <label for="accFBPI">Adres facebook:</label>
+        <p id="accFBPI"><a href="{{user.fb_profile}}">{{user.fb_profile}}</a></p>
     </div>
-    <div class="form-group row">
-        <div class="col-md-offset-3 col-md-6">
-            <label for="emailSpan">Adres e-mail:</label>
-            <span id="emailSpan" name="email">{{user.email}}</span>
-        </div>
+</div>
+<div class="form-group row">
+  <div class="col-md-offset-3 col-md-6">
+    <label for="accAbout">O mnie: </label>
+    <div id="accAbout">{{{user.about}}}</textarea>
+  </div>
+</div>
+<div class="form-group row text-center">
+    <div class="col-md-offset-3 col-md-6">
+      <a href="/edytuj_profil"><button type="button" name="button" class="btn btn-info">Edytuj profil</button></a>
     </div>
-    <h3  class="text-center">Zmiana hasła</h3>
-    <br>
-  <form action="/profil" method="POST">
-    <div class="form-group row">
-        <div class="col-md-offset-3 col-md-6">
-          <label class="sr-only" for="passwordInput">Wprowadź nowe hasło</label>
-            <input id="passwordInput" class="form-control" type="password" placeholder="Nowe hasło" name="password">
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-md-offset-3 col-md-6">
-          <label class="sr-only" for="passwordInputRep">Powtórz nowe hasło</label>
-            <input id="passwordInputRep" class="form-control" type="password" placeholder="Powtórz nowe hasło" name="passwordRep">
-        </div>
-    </div>
-    <div class="form-group row text-center">
-        <div class="col-md-offset-3 col-md-6">
-          <label for="upData" class="sr-only">Uaktualnij dane</label>
-            <button id="upData" class="btn btn-info" type="submit">Uaktualnij dane</button>
-        </div>
-    </div>
-  </form>
+</div>
 </div>

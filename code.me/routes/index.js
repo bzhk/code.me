@@ -38,6 +38,7 @@ exports = module.exports = function (app) {
 	app.all('/rejestracja', routes.views.register);
 	app.all('/zaloguj', routes.views.signin);
 	app.get('/wyloguj', routes.views.signout);
+	app.all('/edytuj_profil', routes.views.editProfile);
 	app.all('/profil', routes.views.profile);
 	app.get('/ogloszenia', routes.views.posts);
 	app.get('/ogloszenia/:slug', routes.views.post);
