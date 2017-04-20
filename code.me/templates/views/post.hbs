@@ -15,9 +15,25 @@
           <strong>Opis:</strong><br>
           {{{post.content.extended}}}
         </div>
-      {{#if user}}{{#diff user.nick post.author.nick}}<button class="btn btn-info" type="submit" name="apply">Zgłoś sie do projektu</button>{{/diff}}{{/if}}
-      {{#if user}}{{#same user.nick post.author.nick}}<h4>Do projektu zgłosili się</h4>
-      <p>{{post.applyGr}}<p>
+      {{#if user}}
+      {{#diff user.nick post.author.nick}}
+      {{#userIn user._id post.applyGr}}
+      <form class="" action="/dodaj_uzytkownika" method="post">
+        <button class="btn btn-info" type="submit" name="apply">Zgłoś sie do projektu</button>
+      </form>
+      {{/userIn}}
+      {{#userOut user.nick post.author.nick}}
+        <div class="label label-success">
+          Już zgłosiłeś swój profil do tego ogłoszenia.
+        </div>
+      {{/userOut}}
+      {{/diff}}
+      {{/if}}
+      {{#if user}}{{#same user.nick post.author.nick}}
+      <h4>Do projektu zgłosili się:</h4>
+      {{#each post.applyGr}}
+          <p>{{this}}<p>
+        {{/each}}
         {{/same}}{{/if}}
       </article>
     </div>

@@ -51,6 +51,26 @@ module.exports = function () {
 
 	});
 
+	hbs.registerHelper('userIn', function(a,b, options) {
+		try {
+			if(b.indexOf(a)==-1){
+				return options.fn(this);
+			}
+		} catch (e) {
+			console.log("wystąpił błąd"+e)
+		}
+	});
+
+	hbs.registerHelper('userOut', function(a,b, options) {
+		try {
+			if(b.indexOf(a)){
+				return options.fn(this);
+			}
+		} catch (e) {
+			console.log("wystąpił błąd"+e)
+		}
+	});
+
 	/**
 	 * Port of Ghost helpers to support cross-theming
 	 * ==============================================

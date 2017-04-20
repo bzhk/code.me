@@ -43,6 +43,7 @@ exports = module.exports = function (app) {
 	app.get('/ogloszenia', routes.views.posts);
 	app.get('/ogloszenia/:slug', routes.views.post);
 	app.all('/dodaj_ogloszenie', routes.views.addPost);
+	app.all('/dodaj_uzytkownika', routes.views.add);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
