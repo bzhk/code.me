@@ -63,7 +63,7 @@ module.exports = function () {
 
 	hbs.registerHelper('userOut', function(a,b, options) {
 		try {
-			if(b.indexOf(a)){
+			if(b.indexOf(a)!=-1){
 				return options.fn(this);
 			}
 		} catch (e) {

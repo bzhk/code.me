@@ -22,7 +22,7 @@
         <button class="btn btn-info" type="submit" name="apply">Zgłoś sie do projektu</button>
       </form>
       {{/userIn}}
-      {{#userOut user.nick post.author.nick}}
+      {{#userOut user._id post.applyGr}}
         <div class="label label-success">
           Już zgłosiłeś swój profil do tego ogłoszenia.
         </div>
