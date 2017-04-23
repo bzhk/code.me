@@ -33,7 +33,9 @@ exports = module.exports = function (req, res) {
 					}else if(!data.maxSalary){
 						errors.push("Brak stawki maksymalnej.")
 					}
-
+					if(isNaN(data.exp)){
+						errors.push("Brak wymaganego doświadczenia")
+					}
 					if(!data.contentBrief){
 						errors.push("Brak krótkiej treści ogłoszenia")
 					}
@@ -62,7 +64,9 @@ exports = module.exports = function (req, res) {
 						content: {
 							brief: data.contentBrief,
 							extended: data.contentExtended
-						}
+						},
+						exp: data.exp,
+						expForEmp: (data.exp<200? 100: data.exp/2),
 						};
 						var Post = keystone.list("Post").model,
 								post = new Post(postData);

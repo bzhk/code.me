@@ -15,14 +15,26 @@ exports = module.exports = function (req, res) {
           slug: slug
         }, function(err, post){
           if(err){return err}
-          post.applyGr.push(req.user._id);
-          post.save();
+          var emp = {
+            post_slug: post.slug,
+            post_id: post._id,
+            user_slug: req.user.slug,
+            user_id: req.user._id,
+            nick: req.user.nick,
+            email: req.user.email,
+          }
+          var newEmp = keystone.list('newEmp').model,
+              newemp = new newEmp(emp);
+
+          newemp.save();
         });
 
 
 
-        req.flash("success", "Zostałeś dodany.");
-        res.redirect("/ogloszenia/"+slug);
+
+
+          req.flash("success", "Zostałeś dodany.");
+          res.redirect("/ogloszenia/"+slug);
 
 
 };

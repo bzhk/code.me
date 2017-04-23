@@ -10,31 +10,62 @@
           <h5>{{#if post.author.name.first}}przez {{post.author.name.first}}{{/if}}</h5>
         </header>
         <div class="post">
+          <p>Wymagane doświadczenie: {{post.exp}}</p>
+          <p>Nagroda w postaci doświadczenia: {{post.expForEmp}}</p>
           <p>Stawka: {{{post.minSalary}}} - {{{post.maxSalary}}} zł {{{post.salaryType}}}</p>
           <p>Praca zdalna: {{{post.remote}}}</p>
           <strong>Opis:</strong><br>
           {{{post.content.extended}}}
         </div>
+
       {{#if user}}
-      {{#diff user.nick post.author.nick}}
-      {{#userIn user._id post.applyGr}}
-      <form class="" action="/dodaj_uzytkownika" method="post">
-        <button class="btn btn-info" type="submit" name="apply">Zgłoś sie do projektu</button>
-      </form>
-      {{/userIn}}
-      {{#userOut user._id post.applyGr}}
-        <div class="label label-success">
-          Już zgłosiłeś swój profil do tego ogłoszenia.
-        </div>
-      {{/userOut}}
-      {{/diff}}
+
+        {{#diff user.nick post.author.nick}}
+
+          {{#userExp user.exp post.exp }}
+
+            {{#userIn user._id data.users_id}}
+              <form class="" action="/dodaj_uzytkownika" method="post">
+                <button class="btn btn-info" type="submit" name="apply">Zgłoś się do projektu</button>
+              </form>
+            {{/userIn}}
+
+            {{#userOut user._id data.users_id}}
+              <div class="label label-success">
+                Już zgłosiłeś swój profil do tego projektu.
+              </div>
+            {{/userOut}}
+          {{/userExp}}
+          {{#postExp post.exp user.exp}}
+            <div class="">
+              Niestety masz za mało doświadczenia.
+            </div>
+          {{/postExp}}
+        {{/diff}}
+
+
+        {{#same user.nick post.author.nick}}
+          {{#if data.newEmp}}
+            <h4>Do projektu zgłosili się:</h4>
+            <form class="" action="/zamknij_ogloszenie" method="post">
+
+            {{#each data.newEmp}}
+                <div>
+                  {{data.newEmp}}
+                <input type="checkbox" name="chfexp" value="{{user_slug}}">
+                  <a href="{{userUrl user_slug}}">{{nick}}</a> , {{email}}
+                </dic>
+            {{/each}}
+            <br>
+            <button type="submit" class="btn btn-info" name="close" >Zamknij ogłoszenie i daj doświadzenie</button>
+          </form>
+          {{/if}}
+          {{#unless data.newEmp}}
+            <h4>Brak zgłoszeń.</h4>
+          {{/unless}}
+        {{/same}}
+
       {{/if}}
-      {{#if user}}{{#same user.nick post.author.nick}}
-      <h4>Do projektu zgłosili się:</h4>
-      {{#each post.applyGr}}
-          <p>{{this}}<p>
-        {{/each}}
-        {{/same}}{{/if}}
       </article>
     </div>
   </div>

@@ -1,0 +1,68 @@
+<div class="container" >
+<br>
+<h2 class="text-center">Profil użytkownika</h2>
+<br>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accFirstName">Imię: </label>
+        <span id="accFirstName"> {{profile.name.first}}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accLastName">Nazwisko: </label>
+        <span id="accLastName">{{profile.name.last}}</span>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accNick">Pseudonim: </label>
+        <span id="accNick" name="nick">{{profile.nick}}</span>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+        <label for="emailSpan">Adres e-mail:</label>
+        <span id="emailSpan" name="email">{{profile.email}}</span>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accTS">Używane technologie: </label>
+      <br>
+        <span id="accTS" name="accTS">{{profile.techstack}}</span>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accPLev">Doświadczenie jako programist: </label>
+        <span id="accPLev" name="accPLev">{{profile.prog_lev}}</span>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+      <label for="accExp">Doświadczenie w portalu Code.me: </label>
+        <span id="accExp" name="exp">{{profile.exp}}</span>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+        <label for="accWS">Strona internetowa:</label>
+        <p id="accWS"><a href="{{profile.website}}">{{profile.website}}</a></p>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-offset-3 col-md-6">
+        <label for="accFBPI">Adres facebook:</label>
+        <p id="accFBPI"><a href="{{profile.fb_profile}}">{{profile.fb_profile}}</a></p>
+    </div>
+</div>
+<div class="form-group row">
+  <div class="col-md-offset-3 col-md-6">
+    <label for="accAbout">O {{profile.nick}}: </label>
+    <div id="accAbout">{{{profile.about}}}</textarea>
+  </div>
+</div>
+</div>
+</div>

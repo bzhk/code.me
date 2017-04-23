@@ -24,7 +24,8 @@ Post.add({
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
-	applyGr: {type: Types.TextArray},
+	exp: { type: Number, required: true, initial: true },
+	expForEmp: { type: Number, required: true, initial: true }
 });
 
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';

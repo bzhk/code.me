@@ -53,7 +53,7 @@ module.exports = function () {
 
 	hbs.registerHelper('userIn', function(a,b, options) {
 		try {
-			if(b.indexOf(a)==-1){
+			if(b.indexOf(a.toString())==-1){
 				return options.fn(this);
 			}
 		} catch (e) {
@@ -63,7 +63,28 @@ module.exports = function () {
 
 	hbs.registerHelper('userOut', function(a,b, options) {
 		try {
-			if(b.indexOf(a)!=-1){
+			if(b.indexOf(a.toString())!=-1){
+				return options.fn(this);
+			}
+		} catch (e) {
+			console.log("wystąpił błąd"+e)
+		}
+	});
+
+
+	hbs.registerHelper('userExp', function(a,b, options) {
+		try {
+			if(a>=b){
+				return options.fn(this);
+			}
+		} catch (e) {
+			console.log("wystąpił błąd"+e)
+		}
+	});
+
+	hbs.registerHelper('postExp', function(a,b, options) {
+		try {
+			if(b>a){
 				return options.fn(this);
 			}
 		} catch (e) {
@@ -237,6 +258,9 @@ module.exports = function () {
 	// Direct url link to a specific post
 	_helpers.postUrl = function (postSlug, options) {
 		return ('/ogloszenia/' + postSlug);
+	};
+	_helpers.userUrl = function (postSlug, options) {
+		return ('/uzytkownik/' + postSlug);
 	};
 
 	// might be a ghost helper

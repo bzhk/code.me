@@ -6,8 +6,8 @@ var Types = keystone.Field.Types;
  * ==========
  */
 var User = new keystone.List('User',{
-	autokey: { path: 'key', from: 'nick', unique: true },
- 	map: { name: 'key' },
+	autokey: { path: 'slug', from: 'nick', unique: true },
+ 	map: { name: 'nick' },
  	defaultSort: '-key'
 });
 
@@ -36,5 +36,5 @@ User.schema.virtual('canAccessKeystone').get(function () {
 /**
  * Registration
  */
-User.defaultColumns = 'key,name,nick, email, isAdmin, agr';
+User.defaultColumns = 'nick, name, email, isAdmin, agr';
 User.register();
