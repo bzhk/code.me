@@ -11,9 +11,11 @@ exports = module.exports = function (req, res) {
     locals.section = 'post';
     locals.data = {
       newEmp: [],
-      users_id: []
+      users_id: [],
+      users_exp: []
     };
-    var users_id = locals.data.users_id;
+    var users_id = locals.data.users_id,
+        users_exp = locals.data.users_exp;
 
 
 
@@ -42,15 +44,26 @@ exports = module.exports = function (req, res) {
       }).exec(function(err, results){
 
         locals.data.newEmp = results;
+
         results.forEach(function(x){
           users_id.push( x.user_id);
-        })
+        });
 
-
+        users_id.forEach(function(x){
+          keystone.list('User').model
+          .find({
+            _id: x
+          }).exec(function(err, results){
+            results.forEach(function(x){
+              users_exp.push(x);
+            });
+          });
+        });
         next(err);
       })
 
     });
+
 
 
 	// Render the view

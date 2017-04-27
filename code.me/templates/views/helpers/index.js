@@ -35,7 +35,7 @@ module.exports = function () {
 				return options.fn(this);
 			}
 		} catch (e) {
-			console.log("wystąpił błąd"+e)
+			console.log("wystąpił błąd "+e)
 		}
 
 	});
@@ -46,7 +46,7 @@ module.exports = function () {
 				return options.fn(this);
 			}
 		} catch (e) {
-			console.log("wystąpił błąd"+e)
+			console.log("wystąpił błąd "+e)
 		}
 
 	});
@@ -57,7 +57,7 @@ module.exports = function () {
 				return options.fn(this);
 			}
 		} catch (e) {
-			console.log("wystąpił błąd"+e)
+			console.log("wystąpił błąd "+e)
 		}
 	});
 
@@ -67,7 +67,7 @@ module.exports = function () {
 				return options.fn(this);
 			}
 		} catch (e) {
-			console.log("wystąpił błąd"+e)
+			console.log("wystąpił błąd "+e)
 		}
 	});
 
@@ -78,17 +78,17 @@ module.exports = function () {
 				return options.fn(this);
 			}
 		} catch (e) {
-			console.log("wystąpił błąd"+e)
+			console.log("wystąpił błąd "+e)
 		}
 	});
 
 	hbs.registerHelper('postExp', function(a,b, options) {
 		try {
-			if(b>a){
+			if(b<a){
 				return options.fn(this);
 			}
 		} catch (e) {
-			console.log("wystąpił błąd"+e)
+			console.log("wystąpił błąd "+e)
 		}
 	});
 

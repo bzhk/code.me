@@ -7,7 +7,7 @@
         <hr>
         <header>
           <h1>{{post.title}}</h1>
-          <h5>{{#if post.author.name.first}}przez {{post.author.name.first}}{{/if}}</h5>
+          <h5>{{#if post.author.name.first}}przez <a href="{{userUrl post.author.slug}}">{{post.author.name.first}}</a>{{/if}}</h5>
         </header>
         <div class="post">
           <p>Wymagane doświadczenie: {{post.exp}}</p>
@@ -49,18 +49,18 @@
             <h4>Do projektu zgłosili się:</h4>
             <form class="" action="/zamknij_ogloszenie" method="post">
 
-            {{#each data.newEmp}}
+            {{#each data.users_exp}}
                 <div>
-                  {{data.newEmp}}
-                <input type="checkbox" name="chfexp" value="{{user_slug}}">
-                  <a href="{{userUrl user_slug}}">{{nick}}</a> , {{email}}
+                  {{data.users_exp}}
+                <input type="checkbox" name="chfexp" value="{{slug}}">
+                  <a href="{{userUrl slug}}">{{nick}}</a> , {{email}}, {{exp}}
                 </dic>
             {{/each}}
             <br>
             <button type="submit" class="btn btn-info" name="close" >Zamknij ogłoszenie i daj doświadzenie</button>
           </form>
           {{/if}}
-          {{#unless data.newEmp}}
+          {{#unless data.users_exp}}
             <h4>Brak zgłoszeń.</h4>
           {{/unless}}
         {{/same}}
