@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
 			chfexp = Array.isArray(req.body.chfexp)?req.body.chfexp:[req.body.chfexp];
 
 
-			view.on('init', function(next){
+
 
 		      keystone.list('Post').model
 		      .findOne({
@@ -68,7 +68,7 @@ exports = module.exports = function (req, res) {
 						});
 
 					});
-				});
+				
 
 
   req.flash("success", "Ogłoszenie zostało zamknięte");
