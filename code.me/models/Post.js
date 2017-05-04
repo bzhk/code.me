@@ -20,12 +20,12 @@ Post.add({
 	minSalary: { type: Number, required: true, initial: true },
 	maxSalary: { type: Number, required: true, initial: true },
   remote: { type: Types.Select, required: true, initial: true, options: 'nie, tak'},
+  jobType: { type: Types.Select, required: true, initial: true, options: 'JavaScript, Java, Python, Ruby, Grafika'},
 	content: {
-		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
 	exp: { type: Number, required: true, initial: true },
-	expForEmp: { type: Number, required: true, initial: true }
+	expForEmp: { type: Number }
 });
 
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';

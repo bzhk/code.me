@@ -1,25 +1,40 @@
 <div class="container">
 	<h1>Ogłoszenia</h1>
+	<h4 class="text-weight-normal">Dostępna ilość ogłoszeń: <span class="ano-len"></span></h4>
 </div>
-<div class="container">
+	<div class="container">
+	<div id="row">
+		<button class="col-xs-12 col-sm-3 col-md-2 btn-post btn-info">Pokaż wszystko</button>
+		<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Java</button>
+		<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">JavaScript</button>
+		<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Grafika</button>
+		<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Python</button>
+	</div>
+	</div>
+<div class="container" style="min-height: 500px;">
 	<div class="row">
-		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Dostępna ilość ogłoszeń: {{ data.posts.results.length}}</h4>
-			<div class="blog">
+
 				{{# each data.posts.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
-					<p class="lead text-muted">
-							{{#if author.name.first}}by {{author.name.first}} {{author.name.last}}{{/if}}
-					</p>
-					<p>Wymagane doświadczenie: {{exp}}</p>
-          <p>Stawka: {{{minSalary}}} - {{{maxSalary}}} zł {{{salaryType}}}</p>
-          <p>Praca zdalna: {{{remote}}}</p>
-					<p>{{{content.brief}}}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Czytaj więcej...</a></p>{{/if}}
-				</div>
+
+				<div class="col-xs-12 col-sm-6 col-md-4 onePost colimg" data-colandero="{{jobType}}">
+
+					<h1 class="postHead {{jobType}}">{{jobType}}</h1>
+					<div class="postBody">
+
+					<a class="link" href="{{postUrl slug}}"><div class="postSection"><h2 >{{{title}}}</h2></div></a>
+						<p class="postSection">{{#if author.name.first}}{{author.name.first}} {{author.name.last}}{{/if}}</p>
+						<p class="postSection">Wymagane doświadczenie: {{exp}}</p>
+						<p class="postSection">Stawka {{{salaryType}}} {{{minSalary}}} - {{{maxSalary}}} zł </p>
+						<!-- <p>{{{content.brief}}}</p> -->
+
+					</div>
+						{{#if content.extended}}<a class="link" href="{{postUrl slug}}">
+							<button class="postReadMore btn btn-primary">Zobacz szczegóły</button>
+							</a>{{/if}}
+					</div>
+
 				{{/each}}
-			</div>
-		</div>
 	</div>
 </div>
+
+<script src="js/scripts/fitler.js"></script>

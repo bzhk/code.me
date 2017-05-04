@@ -36,12 +36,9 @@ exports = module.exports = function (req, res) {
 					if(isNaN(data.exp)){
 						errors.push("Brak wymaganego doświadczenia")
 					}
-					if(!data.contentBrief){
-						errors.push("Brak krótkiej treści ogłoszenia")
-					}
 
 					if(!data.contentExtended){
-						errors.push("Brak długiej treści ogłoszenia")
+						errors.push("Brak treści ogłoszenia")
 					}
 
 					errors.forEach(function(err){
@@ -61,8 +58,8 @@ exports = module.exports = function (req, res) {
 						remote: data.remote,
 						salaryType: data.salaryType,
 						author: req.user,
+						jobType: data.jobType,
 						content: {
-							brief: data.contentBrief,
 							extended: data.contentExtended
 						},
 						exp: data.exp,
