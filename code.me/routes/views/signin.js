@@ -21,7 +21,7 @@ exports = module.exports = function (req, res) {
 		}
 		var onSuccess = function(){
 			req.flash('success','Zostałeś poprawnie zalogowany.');
-			return res.redirect('/');
+			return res.redirect('/ogloszenia');
 		}
 		var onFail = function(){
 			req.flash('error','Wprowadziłeś błędną nazwę użytkownika lub hasło.');

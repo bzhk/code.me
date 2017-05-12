@@ -19,7 +19,7 @@ function makeArray(list){
 function showAll(list){
   for( var i=0;i<list.length;i++){
     list[i].style.display="";
-    list[i].classList.remove("hide");
+    list[i].classList.remove("hidee");
     list[i].classList.add("show");
 
   }
@@ -28,7 +28,7 @@ function showAll(list){
 function hideAll(list){
   for(var i=0;i<list.length;i++){
 
-    list[i].classList.add("hide");
+    list[i].classList.add("hidee");
     list[i].classList.remove("show");
 
 
@@ -49,9 +49,9 @@ colbutton[0].addEventListener("click",function(e){
   setTimeout(function(){
 var itemShows = document.querySelectorAll(".show");
   ano_len.textContent=itemShows.length;
-},11);
+},201);
 
-  setTimeout(function(){showAll(colimg);},10)
+  setTimeout(function(){showAll(colimg);},200)
 },false);
 function addFuncToButtons(){
   for(var x=1;x<colbutton.length;x++){
@@ -59,7 +59,7 @@ function addFuncToButtons(){
       var txt = e.target.innerText.toLowerCase(),
           list =[];
       hideAll(colimg);
-      setTimeout(function(){displayNone(colimg);},10)
+      setTimeout(function(){displayNone(colimg);},200)
       for(var i in colimg){
         var dataFiltr = fgFiltr[i].dataset.colandero.toLowerCase().split(" ");
         for(var z in dataFiltr){
@@ -71,8 +71,8 @@ function addFuncToButtons(){
       setTimeout(function(){
     var itemShows = document.querySelectorAll(".show");
       ano_len.textContent=itemShows.length;
-    },11);
-        setTimeout(function(){showAll(list);},10)
+    },201);
+        setTimeout(function(){showAll(list);},200)
     },false);
   }
 }

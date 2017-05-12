@@ -14,6 +14,7 @@
 <div class="container" style="min-height: 500px;">
 	<div class="row">
 
+
 				{{# each data.posts.results}}
 
 				<div class="col-xs-12 col-sm-6 col-md-4 onePost colimg" data-colandero="{{jobType}}">
@@ -21,7 +22,7 @@
 					<h1 class="postHead {{jobType}}">{{jobType}}</h1>
 					<div class="postBody">
 
-					<a class="link" href="{{postUrl slug}}"><div class="postSection"><h2 >{{{title}}}</h2></div></a>
+					<a class="link" href="{{postUrl slug}}"><div class="postTitle postSection"><h2 >{{{title}}}</h2></div></a>
 						<p class="postSection">{{#if author.name.first}}{{author.name.first}} {{author.name.last}}{{/if}}</p>
 						<p class="postSection">Wymagane doświadczenie: {{exp}}</p>
 						<p class="postSection">Stawka {{{salaryType}}} {{{minSalary}}} - {{{maxSalary}}} zł </p>

@@ -23,7 +23,7 @@
 	<body>
 		<div id="header">
 			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
+				<!-- <div role="navigation" class="navbar navbar-default">
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
@@ -57,10 +57,46 @@
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div> -->
+				<nav id="m-menu" >
+					<ul>
+						<li>
+							<label for="menuBtn" class="sr-only">ToggleMenu</label>
+							<a id="menuBtn"  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></a>
+						</li>
+						<li>
+							<label for="annoBtn" class="sr-only">Ogłoszenia</label>
+							<a id="annoBtn" href="/ogloszenia" class="glyphicon glyphicon-duplicate" aria-hidden="true"></a>
+						</li>
+						{{^user}}
+						<li>
+							<label for="regiBtn" class="sr-only">Rejestracja</label>
+							<a id="regiBtn" href="/rejestracja" class="glyphicon glyphicon-edit" aria-hidden="true"></a>
+						</li>
+						<li>
+							<label for="loginBtn" class="sr-only">Zaloguj się</label>
+							<a id="loginBtn" href="/zaloguj" class="glyphicon glyphicon-log-in" aria-hidden="true"></a>
+						</li>
+						{{/user}}
+						{{#if user}}
+						<li>
+							<label for="addAnnBtn" class="sr-only">Dodaj ogłoszenie</label>
+							<a id="addAnnBtn" href="/dodaj_ogloszenie" class="loguser glyphicon glyphicon-plus" aria-hidden="true"></a>
+						</li>
+						<li>
+							<label for="editProfileBtn" class="sr-only">Zobacz Profil</label>
+							<a id="editProfileBtn" href="/profil" class="loguser glyphicon glyphicon-wrench" aria-hidden="true"></a>
+						</li>
+						<li>
+							<label for="logOutBtn" class="sr-only">Wyloguj się</label>
+							<a id="logOutBtn" href="/wyloguj" class="glyphicon glyphicon-off" aria-hidden="true"></a>
+						</li>
+						{{/if}}
+					</ul>
+				</nav>
 			</div>
 		</div>
-		<div id="body">
+		<div id="body" style="margin-top:50px">
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
 				validation errors, success messages, etc
@@ -108,6 +144,8 @@
 			//- them specifically here, instead of bootstrap-3.3.5.min.js
 		--}}
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+		<script src="/js/scripts/toggleMenu.js"></script>
+		<script src="/js/scripts/checkAlert.js"></script>
 		{{{isAdminEditorJS user}}}
 	</body>
 </html>
