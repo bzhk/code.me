@@ -3,18 +3,29 @@
   <div class="row">
     <div class="col-sm-8 col-md-9">
       <article class="articleCont">
-        <p><a href="/ogloszenia">&larr; Wróć do listy ogłoszeń</a></p>
+        <p><a href="/ogloszenia"> <span class="glyphicon glyphicon-arrow-left"></span> Wróć do listy ogłoszeń</a></p>
         <hr>
         <header>
-          <h1>{{post.title}}</h1>
-          <h5>{{#if post.author.name.first}}przez <a href="{{userUrl post.author.slug}}">{{post.author.name.first}}</a>{{/if}}</h5>
+          <h1 class="post_details_style">{{post.title}}</h1>
+          {{#if post.author.name.first}}
+          <h3 class="authorSection" ><a href="{{userUrl post.author.slug}}">{{post.author.name.first}}</a></h3>
+          {{/if}}
+          <ul id="post_details">
+                <li class="label label-success">Stawka {{{post.salaryType}}} {{{post.minSalary}}} - {{{post.maxSalary}}} zł</li>
+                <li>{{#userExp post.exp user.exp}}
+        									<span class="label label-danger">Wymagane doświadczenie: {{post.exp}}</span>
+        								{{/userExp}}
+        								{{#postExp user.exp post.exp}}
+        									<span class="label label-success">Wymagane doświadczenie: {{post.exp}}</span>
+        								{{/postExp}}</li>
+                <li class="label label-info">Nagroda w postaci doświadczenia: {{post.expForEmp}}</li>
+                {{#same post.remote "tak"}}<li class="label label-info">Praca zdalna</li>{{/same}}
+
+          </ul>
+
         </header>
-        <div class="post">
-          <p>Wymagane doświadczenie: {{post.exp}}</p>
-          <p>Nagroda w postaci doświadczenia: {{post.expForEmp}}</p>
-          <p>Stawka: {{{post.minSalary}}} - {{{post.maxSalary}}} zł {{{post.salaryType}}}</p>
-          <p>Praca zdalna: {{{post.remote}}}</p>
-          <strong>Opis:</strong><br>
+        <div class="extended_post">
+
           {{{post.content.extended}}}
         </div>
 
@@ -31,9 +42,9 @@
             {{/userIn}}
 
             {{#userOut user._id data.users_id}}
-              <div class="label label-success">
+              <span class="label label-success">
                 Już zgłosiłeś swój profil do tego projektu.
-              </div>
+              </span>
             {{/userOut}}
           {{/userExp}}
           {{#postExp post.exp user.exp}}
@@ -53,8 +64,8 @@
                 <div>
                   {{data.users_exp}}
                 <input type="checkbox" name="chfexp" value="{{slug}}">
-                  <a href="{{userUrl slug}}">{{nick}}</a> , {{email}}, {{exp}}
-                </dic>
+                  <a href="{{userUrl slug}}">{{nick}}</a> | E-mail: {{email}} | Doświadczenie użytkownika: {{exp}}
+                </div>
             {{/each}}
             <br>
             <button type="submit" class="btn btn-info" name="close" >Zamknij ogłoszenie i daj doświadzenie</button>

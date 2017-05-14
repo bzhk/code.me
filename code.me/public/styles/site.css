@@ -5840,11 +5840,13 @@ button.close {
   margin: 0; }
 
 .postHead {
-  padding: 20px 0;
   color: #fff;
   font-weight: bold;
   text-align: center;
   margin: 0; }
+
+.postHead h1 {
+  font-size: 20px; }
 
 .postReadMore {
   padding: 10px;
@@ -5866,11 +5868,33 @@ button.close {
 .postSection {
   padding: 5px 0;
   color: #555;
-  text-align: center;
   font-size: 15px; }
 
+.authorSection {
+  font-size: 15px;
+  color: #999; }
+
+.authorSection:hover {
+  color: #0099CC; }
+
 .postBody {
-  padding: 10px; }
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #ddd; }
+
+.postBody h2 {
+  font-size: 16px;
+  padding: 0;
+  margin: 0; }
+
+.postTitle h2 {
+  display: inline-block;
+  vertical-align: middle;
+  color: #0099CC;
+  font-size: 25px; }
+
+.postTitle:hover h2 {
+  color: #33b5e5; }
 
 a, a:hover {
   text-decoration: none; }
@@ -5937,15 +5961,6 @@ a, a:hover {
 
 .colbutton:hover {
   background-color: #00868b; }
-
-.postTitle {
-  height: 100px !important;
-  line-height: 80px;
-  text-align: center; }
-
-.postTitle h2 {
-  display: inline-block;
-  vertical-align: middle; }
 
 #m-menu {
   position: fixed;
@@ -6023,4 +6038,28 @@ a, a:hover {
 
 @media only screen and (max-width: 500px) {
   #m-menu, #m-menu li a {
-    width: 100px; } }
+    width: 100px; }
+  .logo_header {
+    margin-top: 70px; } }
+
+#code_me_logo {
+  padding: 20px;
+  border: 2px solid #0099CC;
+  color: #fff;
+  background-color: #33b5e5;
+  letter-spacing: 7px; }
+
+#post_details {
+  padding: 0; }
+  #post_details li {
+    display: inline-block; }
+  #post_details a {
+    text-decoration: none;
+    color: white; }
+
+.post_details_style {
+  color: #0099CC; }
+
+.extended_post {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px; }

@@ -1,40 +1,52 @@
 <div class="container">
-	<h1>Ogłoszenia</h1>
-	<h4 class="text-weight-normal">Dostępna ilość ogłoszeń: <span class="ano-len"></span></h4>
+	<h5 class="text-weight-normal">Dostępna ilość ogłoszeń: <span class="ano-len"></span></h5>
 </div>
 	<div class="container">
-	<div id="row">
-		<button class="col-xs-12 col-sm-3 col-md-2 btn-post btn-info">Pokaż wszystko</button>
-		<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Java</button>
-		<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">JavaScript</button>
-		<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Grafika</button>
-		<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Python</button>
+		<div id="row">
+			<button class="col-xs-12 col-sm-3 col-md-2 btn-post btn-info">Pokaż wszystko</button>
+			<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Java</button>
+			<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">JavaScript</button>
+			<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Grafika</button>
+			<button class="col-xs-6 col-sm-3 col-md-1 btn-post btn-info">Python</button>
+		</div>
 	</div>
-	</div>
-<div class="container" style="min-height: 500px;">
+	<span id="user_exp" style="display:none">{{user.exp}}</span>
+
+<div class="container">
 	<div class="row">
 
+				{{#each data.posts.results}}
 
-				{{# each data.posts.results}}
-
-				<div class="col-xs-12 col-sm-6 col-md-4 onePost colimg" data-colandero="{{jobType}}">
-
-					<h1 class="postHead {{jobType}}">{{jobType}}</h1>
-					<div class="postBody">
-
-					<a class="link" href="{{postUrl slug}}"><div class="postTitle postSection"><h2 >{{{title}}}</h2></div></a>
-						<p class="postSection">{{#if author.name.first}}{{author.name.first}} {{author.name.last}}{{/if}}</p>
-						<p class="postSection">Wymagane doświadczenie: {{exp}}</p>
-						<p class="postSection">Stawka {{{salaryType}}} {{{minSalary}}} - {{{maxSalary}}} zł </p>
-						<!-- <p>{{{content.brief}}}</p> -->
-
+				<div class="row onePost colimg" data-colandero="{{jobType}}">
+					<div class="col-md-12">
+					<div class="col-md-6">
+						<div class="postBody">
+						<a class="link" href="{{postUrl slug}}"><div class="postTitle postSection"><h2 >{{{title}}}</h2></div></a>
+							{{#if author.name.first}}
+							<a href="{{userUrl author.slug}}">
+								<p class="postSection authorSection">{{author.name.first}} {{author.name.last}}</p>
+							</a>
+							{{/if}}
+							<p class="postSection">
+								<span class="label label-success {{jobType}}">{{jobType}}</span>
+								<span class="label label-success">Stawka {{{salaryType}}} {{{minSalary}}} - {{{maxSalary}}} zł</span>
+								{{user.exp}}
+								{{#userExp exp ../user.exp}}
+									<span class="label label-danger">Wymagane doświadczenie: {{exp}}</span>
+								{{/userExp}}
+								{{#postExp ../user.exp exp}}
+									<span class="label label-success">Wymagane doświadczenie: {{exp}}</span>
+								{{/postExp}}
+								{{#same remote "tak"}}
+								<span class="label label-info">Praca zdalna</span>
+								{{/same}}
+							</p>
+						</div>
 					</div>
-						{{#if content.extended}}<a class="link" href="{{postUrl slug}}">
-							<button class="postReadMore btn btn-primary">Zobacz szczegóły</button>
-							</a>{{/if}}
 					</div>
-
+				</div>
 				{{/each}}
+
 	</div>
 </div>
 
