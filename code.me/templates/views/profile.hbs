@@ -1,72 +1,65 @@
-<div class="container" >
-<br>
-<h2 class="text-center">Twój profil</h2>
-<br>
-  <div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
-      <label for="accFirstName">Imię: </label>
-        <span id="accFirstName"> {{user.name.first}}</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
-      <label for="accLastName">Nazwisko: </label>
-        <span id="accLastName">{{user.name.last}}</span>
-    </div>
-</div>
-  <div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
-      <label for="accNick">Pseudonim: </label>
-        <span id="accNick" name="nick">{{user.nick}}</span>
-    </div>
-</div>
-<div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
-        <label for="emailSpan">Adres e-mail:</label>
-        <span id="emailSpan" name="email">{{user.email}}</span>
-    </div>
-</div>
-  <div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
-      <label for="accTS">Używane technologie: </label>
-      <br>
-        <span id="accTS" name="accTS">{{user.techstack}}</span>
-    </div>
-</div>
-  <div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
-      <label for="accPLev">Doświadczenie jako programist: </label>
-        <span id="accPLev" name="accPLev">{{user.prog_lev}}</span>
-    </div>
-</div>
-  <div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
-      <label for="accExp">Doświadczenie w portalu Code.me: </label>
-        <span id="accExp" name="exp">{{user.exp}}</span>
-    </div>
-</div>
 
-<div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
+<div class="container-fluid header__profile">
+
+  <div class="container" >
+    <div class="col-md-5">
+      <div class="col-sm-4 col-xs-6">
+        <label for="accFirstName">imię </label>
+        <p id="accFirstName"> {{user.name.first}}</p>
+      </div>
+      <div class="col-sm-4 col-xs-6">
+        <label for="accLastName">nazwisko </label>
+        <p id="accLastName">{{user.name.last}}</p>
+      </div>
+      <div class="col-sm-4 ">
+        <label for="accNick">pseudonim </label>
+        <p id="accNick" name="nick">{{user.nick}}</p>
+      </div>
+      <div class="col-md-12">
+        <label for="emailSpan">adres e-mail</label>
+        <p id="emailSpan" name="email">{{user.email}}</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="col-md-12 col-sm-6 col-sx-12">
         <label for="accWS">Strona internetowa:</label>
         <p id="accWS"><a href="{{user.website}}">{{user.website}}</a></p>
-    </div>
-</div>
-<div class="form-group row">
-    <div class="col-md-offset-3 col-md-6">
+      </div>
+      <div class="col-md-12 col-sm-6 col-sx-12">
         <label for="accFBPI">Adres facebook:</label>
         <p id="accFBPI"><a href="{{user.fb_profile}}">{{user.fb_profile}}</a></p>
+      </div>
     </div>
-</div>
-<div class="form-group row">
-  <div class="col-md-offset-3 col-md-6">
-    <label for="accAbout">O mnie: </label>
-    <div id="accAbout">{{{user.about}}}</textarea>
+  </div>
+
+
+  <div class="container">
+    <div class="col-md-5 body__profile">
+      <div class="col-md-12">
+        <label for="accAbout">o mnie </label>
+        <p id="accAbout">{{{user.about}}}</p>
+      </div>
+    </div>
+    <div class="col-md-3 body__skill">
+      <div class="col-md-12">
+        <label for="accTS">używane technologie </label>
+        <p id="accTS" name="accTS">{{user.techstack}}</p>
+      </div>
+      <div class="col-md-12">
+        <label for="accPLev">doświadczenie jako programist</label>
+        <p id="accPLev" name="accPLev">{{user.prog_lev}}</p>
+      </div>
+      <div class="col-md-12">
+        <label for="accExp">doświadczenie w portalu Code.me </label>
+        <p id="accExp" name="exp" >{{user.exp}}</p>
+      </div>
+    </div>
   </div>
 </div>
-<div class="form-group row text-center">
-    <div class="col-md-offset-3 col-md-6">
-      <a href="/edytuj_profil"><button type="button" name="button" class="btn btn-info">Edytuj profil</button></a>
+
+
+  <div class="container z">
+      <div class="col-md-5 btn__edit">
+        <a href="/edytuj_profil"><button type="button" name="button" class="btn btn-info ">Edytuj profil</button></a>
     </div>
-</div>
-</div>
+  </div>
