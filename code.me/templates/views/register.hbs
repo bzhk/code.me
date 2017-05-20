@@ -1,52 +1,54 @@
-<div class="container" >
-    <h1 class="text-center">Rejestracja</h1>
+<div class="container register__block" >
+  <div class="col-md-offset-3 col-md-6 text-center text__bcg">
+    <h1>Rejestracja</h1>
+  </div>
     <form action="/rejestracja" method="POST">
       <div class="form-group row">
           <div class="col-md-offset-3 col-md-6">
               <label for="nickInput" class="sr-only">Wprowadź nazwę uzytkownika - nick</label>
-              <input id="nickInput" class="form-control" type="text" placeholder="Nazwa użytkownika" name="nick">
+              <input id="nickInput" class="form-control" type="text" placeholder="nazwa użytkownika" name="nick">
           </div>
         </div>
         <div class="form-group row">
             <div class="col-md-offset-3 col-md-6">
                 <label for="emailInput" class="sr-only">Wprowadź adres e-mail</label>
-                <input id="emailInput" class="form-control" type="email" value="{{form.email}}" placeholder="Adres e-mail" name="email">
+                <input id="emailInput" class="form-control" type="email" value="{{form.email}}" placeholder="adres e-mail" name="email">
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-offset-3 col-md-6">
               <label for="emailInputRep" class="sr-only">Powtórz e-mail</label>
-                <input id="emailInputRep" class="form-control" type="email" placeholder="Powtórz e-mail" name="emailRep">
+                <input id="emailInputRep" class="form-control" type="email" placeholder="powtórz e-mail" name="emailRep">
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-offset-3 col-md-3">
               <label for="firstnameInput" class="sr-only">Wprowadź imię</label>
-                <input id="firstnameInput" class="form-control" type="text" value="{{form.firstname}}" placeholder="Imię" name="firstname">
+                <input id="firstnameInput" class="form-control" type="text" value="{{form.firstname}}" placeholder="imię" name="firstname">
             </div>
 
             <div class="col-md-3">
               <label for="lastnameInput" class="sr-only">Wprowadź nazwisko</label>
-                <input if="lastnameInput" class="form-control" type="text" value="{{form.lastname}}" placeholder="Nazwisko" name="lastname">
+                <input if="lastnameInput" class="form-control" type="text" value="{{form.lastname}}" placeholder="nazwisko" name="lastname">
             </div>
         </div>
         <div class="form-group row">
 
             <div class="col-md-offset-3 col-md-6">
-              <label for="passwordInput" class="sr-only">Wprowadź Hasło</label>
-                <input id="passwordInput" class="form-control" type="password" placeholder="Hasło" name="password">
+              <label for="passwordInput" class="sr-only">prowadź Hasło</label>
+                <input id="passwordInput" class="form-control" type="password" placeholder="hasło" name="password">
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-offset-3 col-md-6">
-              <label for="passwordInputRep" class="sr-only">Powtórz hasło</label>
-                <input id="passwordInputRep" class="form-control" type="password" placeholder="Powtórz hasło" name="passwordRep">
+              <label for="passwordInputRep" class="sr-only">powtórz hasło</label>
+                <input id="passwordInputRep" class="form-control" type="password" placeholder="powtórz hasło" name="passwordRep">
             </div>
         </div>
         <div class="form-group row">
             <div class="checkbox col-md-offset-3 col-md-6 text-center">
               <label for="termAndCon" class="sr-only">Pole do akceptacji regulaminu serwisu Code.me</label>
-               <label><input id="termAndCon" type="checkbox" name="agr"> Akceptuje regulamin serwisu Code.me.</label>
+               <label><input id="termAndCon" type="checkbox" name="agr"><span class="xx">akceptuje regulamin serwisu Code.me.</span> </label>
              </div>
         </div>
 

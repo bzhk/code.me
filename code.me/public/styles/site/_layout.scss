@@ -228,17 +228,7 @@ height: 60px; } }
 		    #m-menu, #m-menu li a {
 		        width: 100%;
 		    }
-				.logo_header{
-					margin-top: 70px;
-				}
 		}
-#code_me_logo{
-	padding: 20px;
-  border: 2px solid #0099CC;
-	color: #fff;
-	background-color: #33b5e5;
-  letter-spacing: 7px;
-}
 
 #post_details {
 	padding: 0;
@@ -315,4 +305,123 @@ height: 60px; } }
 #accExp{
 	font-size: 50px;
 	font-weight: 400;
+}
+
+.singin__block-img{
+	background: #33b5e5;
+	height: 100%;
+	opacity: 0.7;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+.text{
+	color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	.corder{
+		padding-top: 140px;
+		h1{
+			font-size: 62px;
+			font-weight: 400;
+			letter-spacing: 10px;
+		}
+		p{
+			font-size: 13px;
+		}
+	}
+}
+.singin__block-info{
+	background-image: url("../images/mount.jpg");
+	background-size: cover;
+	height: 400px;
+	padding: 0;
+}
+.singin__block-input{
+	padding-top: 80px;
+	.form-control{
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-radius: 0;
+		margin: 15px 0;
+		box-shadow: none;
+	}
+	h1{
+		font-size: 32px;
+		font-weight: 400;
+		letter-spacing: 10px;
+		color: #aaa;
+	}
+	input{
+		font-weight: 400;
+		letter-spacing: 5px;
+	}
+	input:focus{
+		border-width: 2px;
+	}
+	input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+}
+.singin__block-newUs{
+	a{
+	color: #aaa;
+	letter-spacing: 3px;
+	font-weight: 400;
+	font-size: 10px;
+	margin-top: 10px;
+	}
+	a:hover{
+		color: #33b5e5;
+	}
+}
+.register__block{
+
+	h1{
+		font-size: 32px;
+		font-weight: 400;
+		letter-spacing: 10px;
+	}
+	input{
+		font-weight: 400;
+		letter-spacing: 5px;
+		font-size: 12px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-radius: 0;
+		margin: 7px 0;
+		box-shadow: none;
+	}
+	input:focus{
+		border-width: 2px;
+		box-shadow: none;
+	}
+	input:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 30px white inset;
+	}
+}
+.checkbox input[type="checkbox"]{
+	position: static;
+	background: black;
+
+}
+.xx{
+	font-weight: 400;
+	color: #aaa;
+	letter-spacing: 2px;
+	margin-left: 5px;
+	font-size: 11px;
+}
+.text__bcg{
+	background: #33b5e5;
+	padding: 10px;
+	color: #fff;
+	margin-bottom: 20px;
+}
+.btn{
+	border-radius: 0;
 }

@@ -4,7 +4,7 @@ exports = module.exports = function(req, res) {
 
 	keystone.session.signout(req, res, function() {
 		req.flash('success','Zostałeś poprawnie wylogowany.');
-		res.redirect('/');
+		res.redirect('/ogloszenia');
 	});
 
 };
