@@ -34,7 +34,7 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
-	app.get('/', routes.views.index);
+	app.get('/', routes.views.signin);
 	app.all('/rejestracja', routes.views.register);
 	app.all('/zaloguj', routes.views.signin);
 	app.get('/wyloguj', routes.views.signout);

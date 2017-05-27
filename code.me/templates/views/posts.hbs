@@ -13,13 +13,13 @@
 	<span id="user_exp" style="display:none">{{user.exp}}</span>
 
 <div class="container">
-	<div class="row">
+
 
 				{{#each data.posts.results}}
 
-				<div class="row onePost colimg" data-colandero="{{jobType}}">
-					<div class="col-md-12">
-					<div class="col-md-6">
+				<div class="onePost colimg" data-colandero="{{jobType}}">
+
+					<div class="col-md-4">
 						<div class="postBody">
 						<a class="link" href="{{postUrl slug}}"><div class="postTitle postSection"><h2 >{{{title}}}</h2></div></a>
 							{{#if author.name.first}}
@@ -44,10 +44,9 @@
 						</div>
 					</div>
 					</div>
-				</div>
+
 				{{/each}}
 
-	</div>
 </div>
 
 <script src="js/scripts/fitler.js"></script>
